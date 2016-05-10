@@ -12,3 +12,9 @@
 	height: 120px;
 	border: 1px solid black;
 }
+.X {
+	background-color: blue;
+}
+.O {
+	background-color: red;
+}
