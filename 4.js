@@ -22,7 +22,7 @@ $(".column").click(function(){
 	console.log("You have clicked!");
 	var columnSelect = $(this);// this makes it so only the first item is clickable
 	if (columnSelect.hasClass("X") || columnSelect.hasClass("O")) {
-		alert("Select another column");//we have not yet added what the values to players
+		// alert("Select another column");//we have not yet added what the values to players
 		//will be using "X" and "O" to keep track of each player move (easier on the eyes)
 	} else {
 		if (player === 1){
@@ -32,9 +32,11 @@ $(".column").click(function(){
 	// 		if (player2 === 2){
 			columnSelect.addClass("O");
 			player = 1;
-	//right now on alert is for column, must change this for row.
+	//right now on alert is for column, must change this for row. 
+	//If row is full, then row cannot be added to anymore
 	//if row is full, add class to row column alerting that row is full
 	//before doing that, must forst create a "pile up"/gravity of divs
+
 		}
 	}
 });
