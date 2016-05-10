@@ -8,8 +8,9 @@ $(document).ready(function(){
 // 5.10 Each onclick must have a trickle down (in the "#game-tiles" div)
 // declare players
 
-var player1 = 1
-var player2 = 0
+var player = 1;
+// var player2 = "O";
+// player1 will input first name; player2 will input second name given in alert
 
 //Onclick Objective
 // player can select a square. 
@@ -24,12 +25,16 @@ $(".column").click(function(){
 		alert("Select another column");//we have not yet added what the values to players
 		//will be using "X" and "O" to keep track of each player move (easier on the eyes)
 	} else {
-		if (player1 === 1){
+		if (player === 1){
 			columnSelect.addClass("X");
-			player1 +=1;
+			player = 2;
 		} else {
-			columnSelect.addClass("0");
-			player2 +=1;
+	// 		if (player2 === 2){
+			columnSelect.addClass("O");
+			player = 1;
+	//right now on alert is for column, must change this for row.
+	//if row is full, add class to row column alerting that row is full
+	//before doing that, must forst create a "pile up"/gravity of divs
 		}
 	}
 });
