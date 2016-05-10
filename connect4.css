@@ -1,0 +1,14 @@
+#game-tiles {
+/*	game-tiles*/
+}
+.row{
+/*	background-color: blue;*/
+	clear: both;
+}
+.column{
+	float: left;
+	/*background-color: green;*/
+	width: 120px;
+	height: 120px;
+	border: 1px solid black;
+}
