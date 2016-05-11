@@ -13,11 +13,11 @@ $(document).ready(function(){
 // var rowD = ["0D", "1D", "2D", "3D", "4D"];
 // var rowE = ["0E", "1E", "2E", "3E", "4E"];
 
-var col0 = ["0A", "0B", "0C", "0D", "0E"];
-var col1 = ["1A", "1B", "1C", "1D", "1E"];
-var col2 = ["2A", "2B", "2C", "2D", "2E"];
-var col3 = ["3A", "3B", "3C", "3D", "3E"];
-var col4 = ["4A", "4B", "4C", "4D", "4E"];
+var col0 = [$("#0A"), $("#0B"), $("#0C"), $("#0D"), $("#0E")];
+var col1 = [$("#1A"), $("#1B"), $("#1C"), $("#1D"), $("#1E")];
+var col2 = [$("#2A"), $("#2B"), $("#2C"), $("#2D"), $("#2E")];
+var col3 = [$("#3A"), $("#3B"), $("#3C"), $("#3D"), $("#3E")];
+var col4 = [$("#4A"), $("#4B"), $("#4C"), $("#4D"), $("#4E")];
 var player = 1;
 // var player2 = "O";
 // player1 will input first name; player2 will input second name given in alert
@@ -37,13 +37,43 @@ var player = 1;
 // Once occupied, add class to row indicating that row is full
 // add gravity 
 
+//
+
+
+	var classZero = $(".zero");
+
 
 $(".column").click(function(){
 	console.log("You have clicked!");
 	var columnSelect = $(this);// this makes it so only the first item is clickable
+	columnSelect.addClass("clicked");
+	console.log(classZero);
+	console.log(col0);
+
 	if (columnSelect.hasClass("X") || columnSelect.hasClass("O")) {
+		// 	var loopCol = function() {
+		// 	for (var i = 0; i < col0.length; i++) {
+		// 		if (col0[i] != $("X") || col0[i] != $("O")) {//cannot have class of X or O
+		// 			alert("column is full!");
+		// 		}
+		// 	}
+		// }
+		// loopCol();
+
+		var checkFull = function(){
+			for (var i= 0; i<classZero.length; i++) {
+				console.log(classZero[i]);
+				// if (classZero[i].hasClass("X") || classZero[i].hasClass("O")) {
+				// 	alert("column is full");
+				// }
+			}
+		}
+		checkFull();
 		// alert("Select another column");//we have not yet added what the values to players
 		//will be using "X" and "O" to keep track of each player move (easier on the eyes)
+		//HERE I need to see which column I'm in. Create a function that determines which column im in
+		//iterate through the array associated with that column. 
+		//if cell is full, move to the one above it
 	} else {
 		if (player === 1){
 			columnSelect.addClass("X");
@@ -56,7 +86,16 @@ $(".column").click(function(){
 	//If row is full, then row cannot be added to anymore
 	//if row is full, add class to row column alerting that row is full
 	//before doing that, must forst create a "pile up"/gravity of divs
-		
+
 		}
 	}
 });
+
+		// var loopCol = function() {
+		// 	for (var i = 0; i < col0.length; i++) {
+		// 		if (col0[i] != $("X") || col0[i] != $("O")) {//cannot have class of X or O
+		// 			alert("column is full!");
+		// 		}
+		// 	}
+		// }
+		// loopCol();
