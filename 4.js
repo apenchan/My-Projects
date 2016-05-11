@@ -13,14 +13,13 @@ $(document).ready(function(){
 // var rowD = ["0D", "1D", "2D", "3D", "4D"];
 // var rowE = ["0E", "1E", "2E", "3E", "4E"];
 
-var col0 = ["0A", "0B", "0C", "0D", "0E"];
+var col0 = [$("#0A"), $("#0B"), $("#0C"), $("#0D"), $("#0E")];
 // var col1 = [$("#1A"), $("#1B"), $("#1C"), $("#1D"), $("#1E")];
 // var col2 = [$("#2A"), $("#2B"), $("#2C"), $("#2D"), $("#2E")];
 // var col3 = [$("#3A"), $("#3B"), $("#3C"), $("#3D"), $("#3E")];
 // var col4 = [$("#4A"), $("#4B"), $("#4C"), $("#4D"), $("#4E")];
 var player = 1;
-var columnZero = col0;
-// var columnZero = $(".zero");
+var columnZero = $(".zero");
 // var player2 = "O";
 // player1 will input first name; player2 will input second name given in alert
 
@@ -40,49 +39,60 @@ var columnZero = col0;
 // add gravity 
 
 //
-console.log($(".zero"));
-console.log($(".one"));
 
-// console.log($(".column"));
-$(".zero").click(function(){
+
+$(".column").click(function(){
 	console.log("You have clicked!");
-	var columnSelect = $(this);// this makes it so only the first item is clickable
-	//console.log($(this));
-	columnSelect.addClass("clicked");
+	var $columnSelect = $(this);// this makes it so only the first item is clickable
+	$columnSelect.addClass("clicked");
 
 		// alert("Select another column");//we have not yet added what the values to players
 		//will be using "X" and "O" to keep track of each player move (easier on the eyes)
 		//HERE I need to see which column I'm in. Create a function that determines which column im in
 		//iterate through the array associated with that column. 
 		//if cell is full, move to the one above it
-	if (columnSelect.hasClass("X") || columnSelect.hasClass("O")) {
+	if ($columnSelect.hasClass("X") || $columnSelect.hasClass("O")) {
+
+
 	} else {
 			if (player === 1){
-					columnSelect.addClass("X");
+					$columnSelect.addClass("X");
 					player = 2;
 			} else {
 	// 		if (player2 === 2){
-			columnSelect.addClass("O");
-			player = 1;
+					$columnSelect.addClass("O");
+					player = 1;
 		}
 
-	var isFull = function (){
-	//for (var i = 0; i < columnZero.length; i++) {
-		if (col0 === ".clicked") {
-			alert ("I am full");
-		//}
-	}
-}
 	//right now on alert is for column, must change this for row. 
 	//If row is full, then row cannot be added to anymore
 	//if row is full, add class to row column alerting that row is full
 	//before doing that, must forst create a "pile up"/gravity of divs
 	// var move 
 	// $full();
+	loopCol();
 		}
-		isFull();
 });
 	
+
+var isFull = function (columnNumber){
+	var $columnArray = $("." + columnNumber);
+	console.log($columnArray);
+	console.log($columnArray.length);
+	for(var i = 0; i < $columnArray.length; i++){
+		console.log($columnArray[i]);
+		var currentColumn = $columnArray[i];
+		console.log($(currentColumn).hasClass("clicked"));
+		//determine if each element is clicked
+	}
+
+	//for (var i = 0; i < columnZero.length; i++) {
+	
+	// if (columnZero === ".clicked") {
+	// 	alert ("I am full");
+	// 	//}
+	// }
+}
 
 // console.log($full);
 
@@ -92,16 +102,24 @@ $(".zero").click(function(){
 
 
 //scrap for now
+var sort = function(element) {
+	if(element.hasClass("X") || element.hasClass("O")){
+		return true;
+	}
+}
 
-	// if (columnSelect.hasClass("X") || columnSelect.hasClass("O")) {
-	// 		var loopCol = function() {
-	// 		for (var i = 0; i < col0.length; i++) {
-	// 			if (col0[i] != ("X") || col0[i] != ("O")) {//cannot have class of X or O
-	// 				alert("column is full!");
-	// 			}
-	// 		}
-	// 	}
-	// 	// loopCol();
+			var loopCol = function() {
+				var filteredCol0 = col0.filter(sort);
+				if (filteredCol0.length == 5) {
+					alert("column is full");
+				}
+			// for (var i = 0; i < col0.length; i++) {
+				//if (col0[i].hasClass("X") || col0[i].hasClass("O")) {//cannot have class of X or O
+					//alert("column is full!");
+				//}
+			//}
+		}
+		loopCol();
 
 		// var checkFull = function(){
 		// 	for (var i= 0; i<classZero.length; i++) {
