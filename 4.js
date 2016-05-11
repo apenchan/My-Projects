@@ -19,6 +19,9 @@ var columnItems =[
 	[$("#3A"), $("#3B"), $("#3C"), $("#3D"), $("#3E")],
 	[$("#4A"), $("#4B"), $("#4C"), $("#4D"), $("#4E")]];
 var player = 1;
+var row = document.getElementsByClassName("row");
+var columns = document.getElementsByClassName("columns");
+var gameTiles = document.getElementbyId("game-tiles");
 // var columnZero = $(".zero");
 // var player2 = "O";
 // player1 will input first name; player2 will input second name given in alert
@@ -69,7 +72,7 @@ $(".column").click(function(){
 	//if row is full, add class to row column alerting that row is full
 	//before doing that, must forst create a "pile up"/gravity of divs
 	// var move 
-	// $full();
+	isFull();
 	// loopCol();
 		}
 });
@@ -89,6 +92,7 @@ var isFull = function (columnNumber){
 			alert("I am full!");
 			break;// the break will stop alert 
 		}
+
 	// }
 	//for (var i = 0; i < columnZero.length; i++) {
 	
@@ -134,8 +138,11 @@ var isFull = function (columnNumber){
 // if A0 = X || O, then A1
 //columnSelect.this needs to render into the next open space. 
 
-
-
+var gravity = function(columns) {
+	for (var i = row.length - 1; i > 0; i--) {
+		if()
+	}
+}
 
 
 
