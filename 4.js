@@ -12,16 +12,45 @@ $(document).ready(function(){
 // var rowC = ["0C", "1C", "2C", "3C", "4C"];
 // var rowD = ["0D", "1D", "2D", "3D", "4D"];
 // var rowE = ["0E", "1E", "2E", "3E", "4E"];
-var columnItems =[
-	[$("#0A"), $("#0B"), $("#0C"), $("#0D"), $("#0E")],
-	[$("#1A"), $("#1B"), $("#1C"), $("#1D"), $("#1E")],
-	[$("#2A"), $("#2B"), $("#2C"), $("#2D"), $("#2E")],
-	[$("#3A"), $("#3B"), $("#3C"), $("#3D"), $("#3E")],
-	[$("#4A"), $("#4B"), $("#4C"), $("#4D"), $("#4E")]];
+
+// var gameGrid = new Array(5)
+
+// 	for( var i = 0; i < 5; i++) { 
+// 			gameGrid[i] = new Array(5);}				
+
+
+// console.log(gameGrid)
+
+
+
+
+
+
+
+
+
+// var columnItems =[
+// 	[$("#0A"), $("#0B"), $("#0C"), $("#0D"), $("#0E")],
+// 	[$("#1A"), $("#1B"), $("#1C"), $("#1D"), $("#1E")],
+// 	[$("#2A"), $("#2B"), $("#2C"), $("#2D"), $("#2E")],
+// 	[$("#3A"), $("#3B"), $("#3C"), $("#3D"), $("#3E")],
+// 	[$("#4A"), $("#4B"), $("#4C"), $("#4D"), $("#4E")]];
+
+
+
+
+
+
+	// 	for (var i = 0; i < columnItems; i++){
+	// 		for(var j = 0; j < columnItems[i].length; j++) {
+	// 		$(columnItems[i][j]).click(function () {
+	// 			console.log("Do I work?!?");
+	// 		});
+	// 	}
+	// }
 var player = 1;
-var row = document.getElementsByClassName("row");
-var columns = document.getElementsByClassName("columns");
-var gameTiles = document.getElementbyId("game-tiles");
+// var columns = document.getElementsByClassName("column");
+// var gameTiles = document.getElementById("game-tiles");
 // var columnZero = $(".zero");
 // var player2 = "O";
 // player1 will input first name; player2 will input second name given in alert
@@ -44,10 +73,14 @@ var gameTiles = document.getElementbyId("game-tiles");
 //
 
 
-$(".column").click(function(){
+$(".column1").click(function(){
 	console.log("You have clicked!");
 	var $columnSelect = $(this);// this makes it so only the first item is clickable
 	$columnSelect.addClass("clicked");
+	if (".column" != "clicked") {
+		alert("#RA") 
+	}
+
 
 		// alert("Select another column");//we have not yet added what the values to players
 		//will be using "X" and "O" to keep track of each player move (easier on the eyes)
@@ -55,8 +88,8 @@ $(".column").click(function(){
 		//iterate through the array associated with that column. 
 		//if cell is full, move to the one above it
 	if ($columnSelect.hasClass("X") || $columnSelect.hasClass("O")) {
-
-
+		// var $rowA = $(".rowA"); 
+		// if ($columnSelect!= )
 	} else {
 			if (player === 1){
 					$columnSelect.addClass("X");
@@ -72,39 +105,47 @@ $(".column").click(function(){
 	//if row is full, add class to row column alerting that row is full
 	//before doing that, must forst create a "pile up"/gravity of divs
 	// var move 
-	isFull();
+	// isFull();
 	// loopCol();
 		}
 });
-	
 
-var isFull = function (columnNumber){
-	var $columnArray = $("." + columnNumber);
-	console.log($columnArray);
-	console.log($columnArray.length);
-	for(var i = 0; i < $columnArray.length; i++){
-		console.log($columnArray[i]);
-		var currentColumn = $columnArray[i];
-		console.log($(currentColumn).hasClass("clicked"));
-		//determine if each element is clicked
-		var array = []
-		if ($(currentColumn).hasClass("clicked")){
-			alert("I am full!");
-			break;// the break will stop alert 
-		}
 
-	// }
-	//for (var i = 0; i < columnZero.length; i++) {
+
+
+// var isFull = function (columnNumber){
+// 	var $columnArray = $("." + columnNumber);
+// 	console.log($columnArray);
+// 	console.log($columnArray.length);
+// 	for(var i = 0; i < $columnArray.length; i++){
+// 		console.log($columnArray[i]);
+// 		var currentColumn = $columnArray[i];
+// 		console.log($(currentColumn).hasClass("clicked"));
+// 		//determine if each element is clicked
+// 		var array = []
+// 		if ($(currentColumn).hasClass("clicked")){
+// 			alert("I am full!");
+// 			break;// the break will stop alert 
+// 		}
+
+// 	// }
+// 	//for (var i = 0; i < columnZero.length; i++) {
 	
-	// if (columnZero === ".clicked") {
-	// 	alert ("I am full");
-	// 	//}
-	}
-}
+// 	// if (columnZero === ".clicked") {
+// 	// 	alert ("I am full");
+// 	// 	//}
+// 	}
+// }
 
 // console.log($full);
-
-
+// var notClicked = function (row) {
+// 		if ($columnSelect != ("#RA")) {
+// 		$columnSelect.removeClass("clicked");
+// 	} else {
+// 		alert ("click lowest row!");
+// 	}
+// }
+// notClicked();
 
 
 
@@ -136,21 +177,16 @@ var isFull = function (columnNumber){
 // if we select on any empty box, the player must automatically drop to the next most clear box
 // a lot of if else statements
 // if A0 = X || O, then A1
+//if Array 0 is full, move onto next row
 //columnSelect.this needs to render into the next open space. 
 
-var gravity = function(columns) {
-	for (var i = row.length - 1; i > 0; i--) {
-		if()
-	}
-}
+// $("#0C").click(function(){
+// 	$("#0A").animate({
 
 
 
-
-
-
-
-
+// 	})
+// }
 
 
 
