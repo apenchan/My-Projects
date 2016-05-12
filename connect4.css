@@ -7,35 +7,35 @@ width: 660px;
 /*	background-color: blue;*/
 	clear: both;
 }
-.column1{
+.row1{
 	float: left;
 	/*background-color: green;*/
 	width: 120px;
 	height: 120px;
 	border: 1px solid black;
 }
-.column2{
+.row2{
 	float: left;
 	/*background-color: green;*/
 	width: 120px;
 	height: 120px;
 	border: 1px solid black;
 }
-.column3{
+.row3{
 	float: left;
 	/*background-color: green;*/
 	width: 120px;
 	height: 120px;
 	border: 1px solid black;
 }
-.column4{
+.row4{
 	float: left;
 	/*background-color: green;*/
 	width: 120px;
 	height: 120px;
 	border: 1px solid black;
 }
-.column5{
+.row5{
 	float: left;
 	/*background-color: green;*/
 	width: 120px;

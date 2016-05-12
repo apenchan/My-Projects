@@ -2,45 +2,128 @@ $(document).ready(function(){
 	console.log("Here and working!");
 });
 
-// objectives by date:
-//5.10 Add onclick to each column
-//5.10 add color to each player. This includes defining player1 and player2
-// 5.10 Each onclick must have a trickle down (in the "#game-tiles" div)
-// // declare players
-// var rowA = ["4A", "3A", "2A", "1A", "0A"];
-// var rowB = ["0B", "1B", "2B", "3B", "4B"];
-// var rowC = ["0C", "1C", "2C", "3C", "4C"];
-// var rowD = ["0D", "1D", "2D", "3D", "4D"];
-// var rowE = ["0E", "1E", "2E", "3E", "4E"];
+var player1 = {
+	name: '',
+	avatar: 'O'
+};
 
-// var gameGrid = new Array(5)
+var player2 = {
+	name: '',
+	avatar: 'X'
+};
 
-// 	for( var i = 0; i < 5; i++) { 
-// 			gameGrid[i] = new Array(5);}				
+var turn = player1;
+
+var switchTurn = function() {
+	if (turn === player1) {
+		turn = player2;
+	} else {
+		turn = player1;
+	}
+	console.log(turn.name)
+}
+
+player1.name = prompt('What is your name player 1?');
+player2.name = prompt("And what do they call player2?");
+
+// each inner array represents a row
+// eeach index position insde a row array is equal to...
+// - tiles[0][0]
+// - tiles[4][2]
+
+var tiles = [
+	[null, null, null, null, null],//top rpw
+	[null, null, null, null, null], // 2nd to top row
+	[null, null, null, null, null], // 3rd to top row
+	[null, null, null, null, null], // 4th from top row
+	[null, null, null, null, null] //the bottem row
+];
 
 
-// console.log(gameGrid)
+arrayOfBoxes = $(".box");
+for(var i = 0; i < arrayOfBoxes.length; i++) {
+	$(arrayOfBoxes[i]).click(function () { 
+		
+		// check if its possible
+		$(this).addClass("clicked");
+		console.log(arrayOfBoxes[i]);
+		switchTurn();
+			// if ($selected.hasClass("X") || $selected.hasClass("O")) {
+			// 		} else {
+			// if (player === 1){
+			// 		$selected.addClass("X");
+			// 		player = 2;
+			// } else {
+			// 		$selected.addClass("O");
+			// 		player = 1;
+			// 	}
+
+		// }
+	});
+}
+arrayOfBoxes[i];
+
+
+
+// - i need an infstatement to check if the box is open or closed
+// - i need to addclass to show that box is now that players avatar
+// - find which position inside the multidimensional array was clicked.
+
+
+
+// //arrayOfBoxes[]
+// // arrayOfBoxes.click(function() {
+// 	console.log("grabbed all boxes")
+// 	for (var i = 0; i < arrayOfBoxes.length; i++){
+// 		console.log(arrayOfBoxes[i])
+// 	}
+// });
 
 
 
 
 
+// var rows = [];
+// var columns =[];
+// rows.push($(".row5"), $(".row4"), $(".row3"), $(".row2"), $(".row1"));
+// columns.push($(".column0"), $(".column1"), $(".column2"), $(".column3"), $(".column4"));
+
+
+// One idea...
+
+// var board = [[null, null, null, null, null], [null]]
+
+// board[0] = column1
+// board[1] = column2
+// board[2] = column3
+
+// what is row0: index 0 for all the iterations of board
+var rows = [
+['row5', 'row5', 'row5', 'row5', 'row5'],
+['row4', 'row4', 'row4', 'row4', 'row4'],
+['row3', 'row3', 'row3', 'row3', 'row3'],
+['row2', 'row2', 'row2', 'row2', 'row2'],
+['row1', 'row1', 'row1', 'row1', 'row1']
+];
+var columns = [
+['column0', 'column0', 'column0', 'column0', 'column0'],
+['column1', 'column1', 'column1', 'column1', 'column1'],
+['column2', 'column2', 'column2', 'column2', 'column2'],
+['column3', 'column3', 'column3', 'column3', 'column3'],
+['column4', 'column4', 'column4', 'column4', 'column4']
+];
+// var boxes = function () {
+// for (var i = 0; i < rows.length; i++) {
+// 	for (var j = 0; j < rows.length[i]; j++){
+// 		console.log();
+// 	}
+// }
 
 
 
-
-// var columnItems =[
-// 	[$("#0A"), $("#0B"), $("#0C"), $("#0D"), $("#0E")],
-// 	[$("#1A"), $("#1B"), $("#1C"), $("#1D"), $("#1E")],
-// 	[$("#2A"), $("#2B"), $("#2C"), $("#2D"), $("#2E")],
-// 	[$("#3A"), $("#3B"), $("#3C"), $("#3D"), $("#3E")],
-// 	[$("#4A"), $("#4B"), $("#4C"), $("#4D"), $("#4E")]];
-
-
-
-
-
-
+// var full = function(){
+// 	if ( )
+// }
 	// 	for (var i = 0; i < columnItems; i++){
 	// 		for(var j = 0; j < columnItems[i].length; j++) {
 	// 		$(columnItems[i][j]).click(function () {
@@ -73,32 +156,30 @@ var player = 1;
 //
 
 
-$(".column1").click(function(){
-	console.log("You have clicked!");
-	var $columnSelect = $(this);// this makes it so only the first item is clickable
-	$columnSelect.addClass("clicked");
-	if (".column" != "clicked") {
-		alert("#RA") 
-	}
+// $(".box").click(function(){
+// 	console.log("You have clicked!");
+// 	var $columnSelect = $(this);// this makes it so only the first item is clickable
+// 	$columnSelect.addClass("clicked");
 
 
-		// alert("Select another column");//we have not yet added what the values to players
-		//will be using "X" and "O" to keep track of each player move (easier on the eyes)
-		//HERE I need to see which column I'm in. Create a function that determines which column im in
-		//iterate through the array associated with that column. 
-		//if cell is full, move to the one above it
-	if ($columnSelect.hasClass("X") || $columnSelect.hasClass("O")) {
-		// var $rowA = $(".rowA"); 
-		// if ($columnSelect!= )
-	} else {
-			if (player === 1){
-					$columnSelect.addClass("X");
-					player = 2;
-			} else {
-	// 		if (player2 === 2){
-					$columnSelect.addClass("O");
-					player = 1;
-		}
+// 		// alert("Select another column");//we have not yet added what the values to players
+// 		//will be using "X" and "O" to keep track of each player move (easier on the eyes)
+// 		//HERE I need to see which column I'm in. Create a function that determines which column im in
+// 		//iterate through the array associated with that column. 
+// 		//if cell is full, move to the one above it
+// 	if ($columnSelect.hasClass("X") || $columnSelect.hasClass("O")) {
+// 		// var $rowA = $(".rowA"); 
+// 		// if ($columnSelect!= )
+// 	} else {
+// 			if (player === 1){
+// 					$columnSelect.addClass("X");
+// 					player = 2;
+// 			} else {
+// 	// 		if (player2 === 2){
+// 					$columnSelect.addClass("O");
+// 					player = 1;
+// 				}
+
 
 	//right now on alert is for column, must change this for row. 
 	//If row is full, then row cannot be added to anymore
@@ -106,9 +187,9 @@ $(".column1").click(function(){
 	//before doing that, must forst create a "pile up"/gravity of divs
 	// var move 
 	// isFull();
-	// loopCol();
-		}
-});
+	//}// loopCol();
+		//}
+// });
 
 
 
@@ -214,3 +295,24 @@ $(".column1").click(function(){
 // 		//}
 // 	}
 // }
+
+
+
+
+// =================
+// PSEUDO CODE PLAN
+// =================
+
+// + HTML AND ALL GAME ELEMENTS
+// + On click listener, available for all boxes
+
+// - keep track of state of each box via class ('clicked' = filled)
+// - when you click something...aka click handler
+// 	- add class "clicked"
+// 	- update the board in the multidimensional array
+// 	- depending on turn, adds the pplayers turn avatar
+// 	- if the box "below" is not clicked...aka gravity
+// 		- Find the column of the box that was clicked
+// 		- Find the multidimensional array associated with that column
+// 		- Find the index position of that one and the one that needs to be identified below it
+
