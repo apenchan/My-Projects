@@ -2,6 +2,7 @@
 /*	game-tiles*/
 height: 660px;
 width: 660px;
+align: center;
 }
 .row{
 /*	background-color: blue;*/
@@ -45,9 +46,11 @@ width: 660px;
 
 .X {
 	background-color: blue;
+	border-radius: 60px;
 }
 .O {
 	background-color: red;
+	border-radius: 60px;
 }
 /*
 var isFull = function (columnNumber){

@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	console.log("Here and working!");
 });
+var options = document.getElementsByClassName(".box");
 
 var player1 = {
 	name: '',
@@ -39,6 +40,11 @@ var tiles = [
 	[null, null, null, null, null] //the bottem row
 ];
 
+$(".box").click(function(){
+	box_clicked = $(this).attr("id");
+	box_number = box_clicked - 1;
+})
+
 
 arrayOfBoxes = $(".box");
 for(var i = 0; i < arrayOfBoxes.length; i++) {
@@ -53,15 +59,21 @@ for(var i = 0; i < arrayOfBoxes.length; i++) {
 			// visualize the move on the dom
 			if (turn === player1){
 				$selected.addClass("X");
+				// if (getWinner("X")) {
+				// 	alert("Mazel! " + player1 + " ! You won.");
 			} else {
 				$selected.addClass("O");
-			}
-
-
+		 }
+		 if (getWinner()==="player1") {
+		 	alert("Great!" + player1 + " has won");
+		 } else if
+		 	(getWinner()==="player2") {
+		 	alert ("Great!" + player2 + " has won");
+		 }
 			// grab the position of the clicked div, so we can match it and update it on the multidimensional array HARD PART
 			console.log($selected);
-			($selected).attr(".box");
-			// console.log($selected);
+			rowInfo = $(this).attr('class');
+
 				// - find the row of the thing that got clicked
 				// - find the column of the thing that got clicked
 				// - updTE THE multi dim array using the above u index positions
@@ -74,11 +86,18 @@ for(var i = 0; i < arrayOfBoxes.length; i++) {
 
 			switchTurn();
 		}
-
+	// }
+		getWinner();
 	});
 }
 arrayOfBoxes[i];
 
+var getWinner = function() {
+	if ($(".sq21").hasClass("X"||"O") && $(".sq22").hasClass("X"||"O") && $(".sq23").hasClass("X"||"O") && $(".sq24").hasClass("X"||"O")) {
+			return true;
+	}
+};
+getWinner();
 
 
 // - i need an infstatement to check if the box is open or closed
