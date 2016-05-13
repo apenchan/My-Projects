@@ -1,0 +1,72 @@
+#game-tiles {
+/*	game-tiles*/
+height: 660px;
+width: 660px;
+align: center;
+}
+.row{
+/*	background-color: blue;*/
+	clear: both;
+}
+.row1{
+	float: left;
+	/*background-color: green;*/
+	width: 120px;
+	height: 120px;
+	border: 1px solid black;
+}
+.row2{
+	float: left;
+	/*background-color: green;*/
+	width: 120px;
+	height: 120px;
+	border: 1px solid black;
+}
+.row3{
+	float: left;
+	/*background-color: green;*/
+	width: 120px;
+	height: 120px;
+	border: 1px solid black;
+}
+.row4{
+	float: left;
+	/*background-color: green;*/
+	width: 120px;
+	height: 120px;
+	border: 1px solid black;
+}
+.row5{
+	float: left;
+	/*background-color: green;*/
+	width: 120px;
+	height: 120px;
+	border: 1px solid black;
+}
+
+.X {
+	background-color: blue;
+	border-radius: 60px;
+}
+.O {
+	background-color: red;
+	border-radius: 60px;
+}
+/*
+var isFull = function (columnNumber){
+	var $columnArray = $("." + columnNumber);
+	var $clickedArray = $('.clicked');
+	var array = [];
+	for(var i = 0; i < $columnArray.length; i++){
+		console.log("row: "  + i);
+		var currentColumn = $columnArray[i];
+	}
+
+	console.log($clickedArray)
+
+	if ($clickedArray.length == 5){
+		alert("I am full!");
+	}else{
+		console.log("column is not full");
+	}
+}*/
