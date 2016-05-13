@@ -65,10 +65,10 @@ for(var i = 0; i < arrayOfBoxes.length; i++) {
 				$selected.addClass("O");
 		 }
 		 if (getWinner()==="player1") {
-		 	alert("Great!" + player1 + " has won");
+		 	alert("Great! + player1 +  has won");
 		 } else if
 		 	(getWinner()==="player2") {
-		 	alert ("Great!" + player2 + " has won");
+		 	alert ("Great! + player2 + has won");
 		 }
 			// grab the position of the clicked div, so we can match it and update it on the multidimensional array HARD PART
 			console.log($selected);
@@ -98,6 +98,8 @@ var getWinner = function() {
 	}
 };
 getWinner();
+
+
 
 
 // - i need an infstatement to check if the box is open or closed
