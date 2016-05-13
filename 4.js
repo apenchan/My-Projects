@@ -43,22 +43,38 @@ var tiles = [
 arrayOfBoxes = $(".box");
 for(var i = 0; i < arrayOfBoxes.length; i++) {
 	$(arrayOfBoxes[i]).click(function () { 
-		
+		var $selected = $(this); 
 		// check if its possible
-		$(this).addClass("clicked");
-		console.log(arrayOfBoxes[i]);
-		switchTurn();
-			// if ($selected.hasClass("X") || $selected.hasClass("O")) {
-			// 		} else {
-			// if (player === 1){
-			// 		$selected.addClass("X");
-			// 		player = 2;
-			// } else {
-			// 		$selected.addClass("O");
-			// 		player = 1;
-			// 	}
+		if ($selected.hasClass("clicked")) {
+			console.log('duplicate move detected');
+			return false;
+		} else {
+			$selected.addClass("clicked");
+			// visualize the move on the dom
+			if (turn === player1){
+				$selected.addClass("X");
+			} else {
+				$selected.addClass("O");
+			}
 
-		// }
+
+			// grab the position of the clicked div, so we can match it and update it on the multidimensional array HARD PART
+			console.log($selected);
+			($selected).attr(".box");
+			// console.log($selected);
+				// - find the row of the thing that got clicked
+				// - find the column of the thing that got clicked
+				// - updTE THE multi dim array using the above u index positions
+
+
+				// [bonus]Add gravity
+
+				// add at least 1 win check to alert winner
+
+
+			switchTurn();
+		}
+
 	});
 }
 arrayOfBoxes[i];
